@@ -11,7 +11,9 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: 'author_id'
 
   # A method that returns the 3 most recent posts for a given user.
-  def show_last_three_posts
-    posts.order('created_at DESC').limit(3)
+  def recent_posts(num = 3)
+    posts.includes(:author).order(created_at: :desc).limit(num)
   end
+
+
 end

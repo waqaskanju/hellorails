@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   # A post belongs to an author.
-  belongs_to :author, class_name: 'User'
+  belongs_to :user, class_name: 'User'
 
   #  A post have many comments.
   has_many :comments
@@ -13,12 +13,12 @@ class Post < ApplicationRecord
 
 
   # show last five comments.
-  def show_last_five_comments
-    comments.order('created_at DESC').limit(5)
+  def recent_comments(num = 5)
+    comments.includes(:post).order(created_at: :desc).limit(num)
   end
 
   # Update number of post when new posts are added.
-  def update_posts_counter
-    user.posts_counter = user.posts.length
+  def update_posts_count
+    author.increment!(:posts_counter)
   end
 end
