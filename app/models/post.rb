@@ -22,3 +22,8 @@ class Post < ApplicationRecord
     author.increment!(:posts_counter)
   end
 end
+
+# For testing use this script.
+
+# first_post = Post.create(author_id: 1, Title: 'Hello', Text: 'This is my first post')
+# p first_post

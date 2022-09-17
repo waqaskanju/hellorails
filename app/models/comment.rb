@@ -15,3 +15,7 @@ class Comment < ApplicationRecord
     post.increment!(:comments_counter)
   end
 end
+
+# For testing use this script.
+
+#  Comment.create(post_id: 1, Author: second_user, Text: 'Hi Tom!' )
