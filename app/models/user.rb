@@ -17,9 +17,9 @@ end
 
 # For testing this file add the data.
 
-# first_user = User.create(name: 'Tom', photo: 
-# 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-# second_user = User.create(name: 'Lilly', 
+# first_user = User.create(name: 'Tom',
+# photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+# second_user = User.create(name: 'Lilly',
 # photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
 
 # p.first_user
