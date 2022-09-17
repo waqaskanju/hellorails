@@ -1,5 +1,4 @@
 class Like < ApplicationRecord
-  
   # Like belong to  user/Author
   belongs_to :author, class_name: 'User'
 

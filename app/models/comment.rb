@@ -1,6 +1,5 @@
 # Add comment to post.
 class Comment < ApplicationRecord
-
   # A comment has some author.
   belongs_to :author, class_name: 'User'
 

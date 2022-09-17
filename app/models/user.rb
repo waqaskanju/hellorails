@@ -1,6 +1,5 @@
 # Modle for user to get the data from database.
 class User < ApplicationRecord
-
   # Author has many posts.
   has_many :posts, foreign_key: 'author_id'
 
@@ -14,8 +13,6 @@ class User < ApplicationRecord
   def recent_posts(num = 3)
     posts.includes(:author).order(created_at: :desc).limit(num)
   end
-
-
 end
 
 # For testing this file add the data.

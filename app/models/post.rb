@@ -11,7 +11,6 @@ class Post < ApplicationRecord
   # call the method update_post_count to increment the posts.
   after_save :update_posts_count
 
-
   # show last five comments.
   def recent_comments(num = 5)
     comments.includes(:post).order(created_at: :desc).limit(num)
