@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Add references for post comment and likes
 class AddReferencesToTables < ActiveRecord::Migration[7.0]
   def change
     # For the post table.
