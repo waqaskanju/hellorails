@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# For Application related data.
+# For Application related data. It also contain hellorails.
 require_relative 'boot'
 
 require 'rails/all'
