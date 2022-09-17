@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# For Application related data.
 require_relative 'boot'
 
 require 'rails/all'
