@@ -31,7 +31,7 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'Comments counter shoulb be inter' do
+  it 'Comments counter should be integer' do
     subject.comments_counter = -5
     expect(subject).to_not be_valid
   end
@@ -41,12 +41,11 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'Show recent comments method' do
+  it 'comment counter an interger' do
     expect(subject.comments_counter).to be_an_integer
   end
 
-  it 'Show recent comments method' do
-    10.times { subject.comments.create(text: 'Comment', author: subject.author) }
-    expect(subject.show_recent_comments.count).to eq(5)
+  it 'Update post counter method' do
+    expect(subject.update_posts_count).to eq(1)
   end
 end

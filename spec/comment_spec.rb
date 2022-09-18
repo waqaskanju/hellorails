@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  user1 = User.create(name: 'Waqas', photo: 'http://www.abc.com', bio: 'This is the story of a person',
-                      posts_counter: 0)
+  user1 = User.create(name: 'Waqas', 
+    photo: 'http://www.abc.com',
+    bio: 'This is the story of a person',
+    posts_counter: 0
+    )
 
   subject do
     Comment.create(
@@ -24,6 +27,6 @@ RSpec.describe Comment, type: :model do
   end
 
   it 'Update comments counter method' do
-    expect(subject.update_comments_counter).to eq(3)
+    expect(subject.update_comments_count).to eq(3)
   end
 end
