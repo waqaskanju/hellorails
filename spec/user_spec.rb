@@ -26,6 +26,6 @@ RSpec.describe User, type: :model do
   # shouwl show recent 3 posts.
   it 'Show recent posts method' do
     8.times { subject.posts.create(title: 'p title ', text: 'txt post', comments_counter: 10, likes_counter: 2) }
-    expect(subject.recent_posts()).to eq(3)
+    expect(subject.recent_posts).to eq(3)
   end
 end
