@@ -1,17 +1,15 @@
-
 # include rail help library
 require 'rails_helper'
 
 # Describe that Comment is a type of model
 # Create a new object of user class
 RSpec.describe Comment, type: :model do
-  user1 = User.create(name: 'Waqas', 
-    photo: 'http://www.abc.com',
-    bio: 'This is the story of a person',
-    posts_counter: 0
-    )
+  user1 = User.create(name: 'Waqas',
+                      photo: 'http://www.abc.com',
+                      bio: 'This is the story of a person',
+                      posts_counter: 0)
 
-#create a new comment     
+  # create a new comment
   subject do
     Comment.create(
       post: Post.create(
