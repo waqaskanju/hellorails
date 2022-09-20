@@ -1,5 +1,11 @@
 # Modle for user to get the data from database.
 class User < ApplicationRecord
+  # validate Name so that it is not blank.
+  validates :name, presence: true
+
+  # It can only be integer greate or equal to zero.
+  validates :postscounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
   # Author has many posts.
   has_many :posts, foreign_key: 'author_id'
 
