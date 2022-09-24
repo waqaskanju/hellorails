@@ -3,10 +3,10 @@ class Post < ApplicationRecord
   validates :Title, presence: true, length: { maximum: 500 }
 
   # Comments counter >0
-  validates :ommentscounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :CommentsCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   # Likes counter > 0
-  validates :Likesscounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :LikesCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   # A post belongs to an author.
   belongs_to :user, class_name: 'User'
