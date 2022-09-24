@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column1 {
+  padding: 10px;
+  height: 170px; /* Should be removed. Only for demonstration */
+}
+
+.column2 {
+  padding: 10px;
+  height: 170px; /* Should be removed. Only for demonstration */
+}
+
+.right {
+  margin-left: 700px;
+}
