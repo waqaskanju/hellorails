@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "users", to: "users#index"
   get "/users/:id", to: "users#show"
+  get "/users/:id/posts", to: "users#post"
+  get "/users/:id/posts/:idp", to: "users#detail"
+  
 end

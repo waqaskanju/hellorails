@@ -1,6 +1,6 @@
 class Like < ApplicationRecord
   # Like belong to  user/Author
-  belongs_to :author, class_name: 'User'
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
 
   # Post has some like.
   belongs_to :post
