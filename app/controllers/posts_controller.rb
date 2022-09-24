@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
-  # for the index method
-  def index; end
+  def index
+    @posts = Post.all
+  end
 
-  # for the show method
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+  end
 end
