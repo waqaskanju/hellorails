@@ -1,9 +1,26 @@
 class PostsController < ApplicationController
+  # This functino can find all users and show the post of
+  # a particular user.
   def index
-    @posts = Post.all
+    # Find all users
+    @users = User.all
+    # Find the user whose id is given
+    @user = User.find_by(id: params[:user_id])
+    # find the posts of user whose id is given.
+    @posts = Post.where(author: @user)
   end
 
+  # this function can select all user
+  # Select a specific user
+  # Select a post and its comments.
   def show
-    @post = Post.find(params[:id])
+    # Find all users.
+    @users = User.all
+    # Select a user based on user_Id.
+    @user = User.find_by(id: params[:user_id])
+    # Select a post based on Id
+    @post = Post.find_by(id: params[:id])
+    # Select Comments of a post.
+    @comments = Comment.where(post: @post)
   end
 end

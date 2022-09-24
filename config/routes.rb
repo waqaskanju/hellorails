@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   get "/users/:id", to: "users#show"
   get "posts", to: "posts#index"
   get "/posts/:id", to: "posts#show"
+  get "/users/:id/posts", to: "users#post"
+  get "/users/:id/posts/:idp", to: "users#detail"
 
 end

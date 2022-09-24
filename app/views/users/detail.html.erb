@@ -1,0 +1,23 @@
+<div class="row">
+  
+<div class="post">
+      <% i=0 %>  
+     <% @posts.each do |post| %>
+
+     <%  if post.id == @idp.to_i %>
+      <% i=i+1 %> 
+   <p> Post #  <%= i.to_s %> by <%= @user.name%> </p>
+    <p><%= post.Text %> </p>
+   
+   <h3> Comments </h3>
+   <div class="comment">
+     <% @comments.each do |comment| %>
+   
+    <p><%= @user.name %>: <%= comment.Text %> </p>
+    <%end %>
+</div>
+    <p Comments: <%= @comments_count %>  Likes:<%= @likes_count %>>
+    <% end %>
+    <%end %>
+</div>
+

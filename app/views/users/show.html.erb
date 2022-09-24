@@ -4,7 +4,7 @@
   </div>
   <div class="column2" style="background-color:#bbb;">
     <h2><%= @user.name %></h2>
-    <p class="right">Number of Posts x</p>
+    <p class="right">Number of Posts <%= @count %></p>
   </div>
 </div>
 
@@ -13,14 +13,17 @@
     <p><%= @user.bio %></p>
 </div>
 
-<div class="post">
-    <p> some posts </p>
+
       <% i=0 %>  
      <% @posts.each do |post| %>
       <% i=i+1 %> 
-   <p> Post #  <%= i.to_s %> </p>
+  <div class="post">
+   <p><b> Post #  <%= i.to_s %> </b> </p>
     <p><%= post.Text %> </p>
+  <p class="right"> Comments: <%=post.CommentsCounter %>  Likes <%=post.LikesCounter %> </p>
+  </div>
+  
     <%end %>
-</div>
 
-<button> See all posts </button>
+
+<button class="center"> See all posts </button>

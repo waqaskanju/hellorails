@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="column1" style="background-color:#aaa;">
+    <%= image_tag("img_avatar.png", width:"150px") %>
+  </div>
+  <div class="column2" style="background-color:#bbb;">
+    <h2><%= @user.name %></h2>
+    <p class="right">Number of Posts <%=@posts_count%></p>
+  </div>
+</div>
+
+
+
+  <% i=0 %>  
+  <% @posts.each do |post| %>
+    <% i=i+1 %> 
+   <div class="post">
+    <p> Post #  <%= i.to_s %> </p>
+    <p><%= post.Text %> </p>
+  </div>  
+  
+   <div class="comment">
+     <% @comments.each do |comment| %>
+    <p><%= @user.name %>: <%= comment.Text %> </p>
+
+    <%end %>
+</div>
+    <p Comments= <%= @comments_count %>  Likes= <%= @likes_count %>>
+    <%end %>
+
+<button class="center"> Pagination </button>
