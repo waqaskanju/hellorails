@@ -9,13 +9,13 @@ class Post < ApplicationRecord
   validates :LikesCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   # A post belongs to an author.
-  belongs_to :user, class_name: 'User'
+  belongs_to :user, class_name: 'User', foreign_key: :author_id
 
   #  A post have many comments.
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   # A post have many likes.
-  has_many :likes
+  has_many :likes, dependent: :destroy
 
   # call the method update_post_count to increment the posts.
   after_save :update_posts_count

@@ -1,7 +1,7 @@
 # Add comment to post.
 class Comment < ApplicationRecord
   # A comment has some author.
-  belongs_to :author, class_name: 'User'
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
 
   # Caomment belon to a post.
   belongs_to :post

@@ -35,3 +35,26 @@
 .right {
   margin-left: 700px;
 }
+
+.bio {
+  margin-top: 10px;
+  border: 3px solid black;
+  width: 1010px;
+}
+
+.post {
+  margin-top: 10px;
+  border: 3px solid black;
+  width: 1010px;
+}
+
+.center {
+  margin-top: 10px;
+  margin-left: 550px;
+}
+
+.comment {
+  margin-top: 10px;
+  border: 3px solid black;
+  width: 1010px;
+}
