@@ -35,8 +35,8 @@ class PostsController < ApplicationController
     author = current_user
 
     # only title and text is allowed to enter
-    post = Post.new(params.require(:post).permit(:title, :Text))
-    post.author = author
+    post = Post.new(params.require(:post).permit(:Title, :Text))
+    post.author_id = author
 
     # Save the post and redirect.
     if post.save

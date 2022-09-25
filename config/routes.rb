@@ -12,12 +12,14 @@ Rails.application.routes.draw do
   # get "/users/:id/posts", to: "users#post"
   # get "/users/:id/posts/:idp", to: "users#detail"
   # get "posts", to: "posts#index"
-  # get "/posts/:id", to: "posts#show"
+  # post "/posts(.:format)", to:  "posts#create"
+  # get "/posts/new", to: "posts#new"
+  # get "/likes/new", to: "likes#new"
   
-  resources :users, only: [:index, :show, :post, :detail] do
+  resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create] do
       resources :comments, only: [:create, :new]
-      resources :likes, only: [:create]
+      resources :likes, only: [:new, :create]
     end
   end
 
