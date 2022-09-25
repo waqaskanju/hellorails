@@ -25,9 +25,10 @@ class CommentsController < ApplicationController
       render :new
     end
   end
-  
+
   private
-# only these attributes are allowed to change. 
+
+  # only these attributes are allowed to change.
   def comment_params
     params.require(:comment).permit(:text, :author_id, :post_id)
   end
