@@ -11,6 +11,6 @@ class Like < ApplicationRecord
   # Update the count of liked posts.
 
   def update_likes_count
-    post.increment!(:likes_counter)
+    post.increment!(:LikesCounter)
   end
 end

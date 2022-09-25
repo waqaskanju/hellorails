@@ -23,4 +23,27 @@ class PostsController < ApplicationController
     # Select Comments of a post.
     @comments = Comment.where(post: @post)
   end
+
+  # Create new Post
+  def new
+    @post = Post.new
+  end
+
+  # Save the post
+  def create
+
+    # Selec the current author
+    author = current_user
+
+    # only title and text is allowed to enter
+    post = Post.new(params.require(:post).permit(:title, :Text))
+    post.author = author
+
+    # Save the post and redirect.
+    if post.save
+      redirect_to user_url(author)
+    else
+      render :new, locals: { post: post }
+    end
+  end
 end

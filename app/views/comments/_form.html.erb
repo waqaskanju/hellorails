@@ -1,0 +1,9 @@
+
+<div class="form-container">
+  <h3>Comments Form:</h3>
+  <%= form_with model: @comment do |form| %> 
+    <%= form.label :Text %>
+    <%= form.text_area :Text %>
+    <%= form.submit "Save Comment" %>
+  <% end %> 
+</div>
