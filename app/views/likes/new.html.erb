@@ -1,0 +1,10 @@
+<div class="form-container">
+  <h3>Add Like:</h3>
+  <%= form_with model: @like do |form| %>
+    <%= f.label :author_id %>
+    <%= f.number_field :author_id %>
+    <%= f.label :post_id %>
+    <%= f.number_field :Text %>
+    <%= f.submit "Add new Post" %>
+  <% end %>
+</div>

@@ -11,7 +11,7 @@ class Comment < ApplicationRecord
 
   # Update the count of comment after new comment has beend added.
   def update_comments_count
-    post.increment!(:comments_counter)
+    post.increment!(:CommentsCounter)
   end
 end
 
