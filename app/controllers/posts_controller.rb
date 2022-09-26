@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     # Find the user whose id is given
     @user = User.find_by(id: params[:user_id])
     # find the posts of user whose id is given.
-    @posts = Post.where(author: @user)
+    @posts = Post.where(author_id: @user)
   end
 
   # this function can select all user

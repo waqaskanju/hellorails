@@ -33,7 +33,7 @@
         </div>
         <div class="comments-list">
           <h3>Recent comments</h3> 
-          <%comments = post.show_recent_comments%>
+          <%comments = post.recent_comments%>
                 
           <%comments.each do |comment|
           commenter = @users.find_by(id:comment[:author_id]) %>
@@ -56,3 +56,4 @@
     </div>
   </section>
 </main>
+
