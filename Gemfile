@@ -43,6 +43,7 @@ gem 'tzinfo'
 gem 'tzinfo-data'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
+gem 'ffi'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -59,7 +60,7 @@ group :development, :test do
   # For  Extracting `assigns` and `assert_template` from ActionDispatch.
   gem 'rails-controller-testing'
     gem "database_cleaner"
-  gem "rspec-rails"
+  
 end
 
 group :development do
@@ -77,7 +78,5 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'selenium-webdriver'
   gem 'webdrivers'
 end
