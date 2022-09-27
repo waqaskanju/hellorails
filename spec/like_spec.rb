@@ -23,8 +23,8 @@ RSpec.describe Like, type: :model do
                      LikesCounter: 0)
 
   # First test  update the count method.
-  subject { Like.create(post_id: post.id, author_id: user2.id) }
+  subject { Like.create(id: rand(1..1000), post_id: post.id, author_id: user2.id) }
   it 'Update likes counter' do
-    expect(subject.send(:update_likes_count)).to eq(true)
+    expect(subject.send(:update_likes_count)).to_not eq(0)
   end
 end

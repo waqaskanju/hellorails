@@ -41,7 +41,7 @@ RSpec.describe 'show all users', type: :request do
   describe 'Show all user' do
     it 'do it have heading' do
       get '/users'
-      expect(response.body).to include('All Users')
+      expect(response.body).to include('Waqas')
     end
   end
 
@@ -50,7 +50,7 @@ RSpec.describe 'show all users', type: :request do
   describe 'Go to user 3' do
     it 'Vist user 3' do
       get '/users/3'
-      expect(response.body).to include('User 3')
+      expect(response.body).to include('Bio')
     end
   end
 end
