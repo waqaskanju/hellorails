@@ -27,7 +27,7 @@ class Post < ApplicationRecord
 
   # Update number of post when new posts are added.
   def update_posts_count
-    user.increment!(:posts_counter)
+    user.increment!(:postscounter)
   end
 end
 

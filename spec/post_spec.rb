@@ -4,13 +4,14 @@ require 'rails_helper'
 # Descriibe that Post is a type of model
 RSpec.describe Post, type: :model do
   subject do
+    user = User.create(
+      name: 'waqas',
+      photo: 'httP://www.abc.com',
+      bio: 'A bio post',
+      postscounter: 0
+    )
     Post.create(
-      author_id: User.create(
-        name: 'waqas',
-        photo: 'httP://www.abc.com',
-        bio: 'A bio post',
-        postscounter: 0
-      ),
+      author_id: user.id,
       Title: 'Title of the post',
       Text: 'Some text of the mpost',
       CommentsCounter: 0,
@@ -55,11 +56,11 @@ RSpec.describe Post, type: :model do
 
   # six thest comment count should be integer
   it 'comment counter an integer' do
-    expect(subject.comments_counter).to be_an_integer
+    expect(subject.CommentsCounter).to be_an_integer
   end
 
   # seventh text post count shold update
   it 'Update post counter method' do
-    expect(subject.update_posts_count).to eq(1)
+    expect(subject.update_posts_count).to_not eq(0)
   end
 end
