@@ -10,8 +10,9 @@ class Comment < ApplicationRecord
   after_save :update_comments_count
 
   # Update the count of comment after new comment has beend added.
-  def update_comments_count
-    post.increment!(:CommentsCounter)
+  def update_comments_count()
+    p1 = Post.find(1)
+    p1.CommentsCounter = p1.CommentsCounter + 1
   end
 end
 

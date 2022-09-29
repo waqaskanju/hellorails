@@ -4,10 +4,9 @@
       Return
     </button>
   </a>
-
   <div class="user-card"> <%# this can be a partial %>
       <a href="/users/<%=@user[:id]%>" class="user-link">
-        <img src="<%=@user.photo || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image" />
+        <%= image_tag("img_avatar.png", width:"150px") %>
         <h2 class="user-name"><%= @user[:name] %></h2> 
       </a>
       <p class="posts-counter">Posts: <%= @user[:posts_counter] %> </p>
@@ -33,14 +32,14 @@
         </div>
         <div class="comments-list">
           <h3>Recent comments</h3> 
-          <%comments = post.show_recent_comments%>
+          <%comments = post.recent_comments%>
                 
           <%comments.each do |comment|
           commenter = @users.find_by(id:comment[:author_id]) %>
             <div class="comment-container">
               <div class="commenter">
                 <a href="/users/<%=commenter[:id]%>">
-                  <img src="<%=commenter[:photo] || image_url('no_profile_pic.png') %>" alt="<%=@user.name %>" class="user-image commenter-image" />
+                  <img src="<%=commenter[:photo] || image_url('img_avatar.png') %>" alt="<%=@user.name %>" class="user-image commenter-image" />
                 </a>
                 <h4><%=commenter[:name]%></h4>
               </div>
@@ -56,3 +55,4 @@
     </div>
   </section>
 </main>
+

@@ -46,10 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 20_220_917_192_405) do
     t.index ['author_id'], name: 'index_posts_on_author_id'
   end
 
-  create_table 'student', id: :serial, force: :cascade do |t|
-    t.string 'name', limit: 30, null: false
-  end
-
   create_table 'users', force: :cascade do |t|
     t.string 'name'
     t.string 'photo'
