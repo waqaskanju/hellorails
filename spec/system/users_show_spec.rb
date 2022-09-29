@@ -13,7 +13,7 @@ RSpec.describe 'In the users show page', type: :system do
   end
 
   # is there picture/ name / bio/ and number of posts
-  scenario "Check  picture,name, bio and post count" do
+  scenario 'Check  picture,name, bio and post count' do
     # Visit this URL
     visit user_path(@user1)
 

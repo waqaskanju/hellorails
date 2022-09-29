@@ -3,7 +3,6 @@ require 'rails_helper'
 
 # Test Post show method.
 RSpec.describe 'Posts show', type: :feature do
- 
   # First add data.
   before(:each) do
     # Select user

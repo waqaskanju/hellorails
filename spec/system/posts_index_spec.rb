@@ -3,20 +3,19 @@ require 'rails_helper'
 
 # Checking index function.
 RSpec.describe ' Test index Function in Post', type: :feature do
-
   scenario 'Check user info' do
     # Test 1
     expect(page).to have_content(@user.name)
-    
+
     # Test 2
     expect(page).to have_xpath("//img[@src='#{@user.photo}']")
-    
+
     # Test 3
     expect(page).to have_content(@user.PostsCounter.to_s)
   end
 
   # Is Post Title Shown.
-  
+
   scenario 'Post Title Check' do
     expect(page).to have_content(@post.Title)
   end
