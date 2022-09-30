@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+ 
+  # Before adding comment authenticate user
+  before_action :authenticate_user!
+ 
   # To show all Comments
   def index
     @comments = Comment.all
