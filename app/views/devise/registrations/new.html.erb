@@ -1,0 +1,50 @@
+<%# Sign Up Page. %>
+<main>
+  <section>
+    <h2>Sign up</h2>
+
+    <%# Form start. %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      
+      <%# Load Template. %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      
+      <%# Email Field %>
+      <div class="string-input">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+    <%# Name Field %>
+      <div class="string-input">
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </div>
+
+<%# Min Password Lenght. %>
+      <div class="string-input">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password"%>
+      </div>
+
+<%# Confrim Password filed %>
+
+      <div class="string-input">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+<%# Signup BUtton. %>
+      <div class="actions">
+        <%= f.submit "Sign up", :class => 'log-in-button'%>
+      </div>
+    <% end %>
+    
+<%# Load Template. %>
+    <%= render "devise/shared/links" %>
+  </section>
+</main>
+

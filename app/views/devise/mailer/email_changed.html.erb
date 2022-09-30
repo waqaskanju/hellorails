@@ -1,0 +1,8 @@
+<p>Hello <%= @email %>!</p>
+
+<%# The view is used for change in email. %>
+<% if @resource.try(:unconfirmed_email?) %>
+  <p>Your email is not changed. <%= @resource.unconfirmed_email %>.</p>
+<% else %>
+  <p>Your Email is changed to. Successfully. <%= @resource.email %>.</p>
+<% end %>

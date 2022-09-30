@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
+  # user should sign in before doing any thing.
+  before_action :authenticate_user!
   # Find all users.
   def index
     @users = User.all
+    # Set the current user.
+    @current_user = current_user
   end
 
   # Select a person
@@ -12,6 +16,7 @@ class UsersController < ApplicationController
     @posts = @user.posts
     @recent_posts = @user.recent_posts
     @count = @user.posts.count
+    @current_user = current_user
   end
 
   # show all post of a single user.

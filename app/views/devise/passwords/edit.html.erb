@@ -1,0 +1,31 @@
+<%# This view is used for password change. %>
+<h2>Password change page.</h2>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  
+  <%# For security reasons. %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <div>
+  <%# First time password. %>
+    <%= f.label :password, "Type New password" %><br />
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+    <% end %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+  </div>
+
+  <%# Second tiem password. %>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+<%# Submit button. %>
+  <div class="actions">
+    <%= f.submit "Change Password" %>
+  </div>
+<% end %>
+
+<%# Shared link. %>
+<%= render "devise/shared/links" %>
