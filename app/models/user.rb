@@ -1,13 +1,20 @@
 # Modle for user to get the data from database.
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  
+  # added by devise , these module will be loaded.
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable, :confirmable
   # validate Name so that it is not blank.
   validates :name, presence: true
 
-  # It can only be integer greate or equal to zero.
-  validates :postscounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-
   # Author has many posts.
   has_many :posts, foreign_key: 'author_id', dependent: :destroy
+  has_many :comments, foreign_key: 'author_id', dependent: :destroy
+  has_many :likes, foreign_key: 'author_id', dependent: :destroy
+  # It can only be integer greate or equal to zero.
+  validates :postscounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   # Author has many comments.
   has_many :comments, foreign_key: 'author_id', dependent: :destroy
