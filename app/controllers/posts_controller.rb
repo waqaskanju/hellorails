@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   # Before adding post authenticate user.
   before_action :authenticate_user!
   # This functino can find all users and show the post of

@@ -1,12 +1,11 @@
 class ApplicationController < ActionController::Base
-
   # Before calling this, first authenticate user.
   before_action :authenticate_user!
 
   # Given in the configuarion.
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # it is private becuase only this class need it. 
+  # it is private becuase only this class need it.
   # we dont not want any one to bypass the allowed attribuutes.
   private
 

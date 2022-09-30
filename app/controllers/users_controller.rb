@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   # user should sign in before doing any thing.
   before_action :authenticate_user!
   # Find all users.
