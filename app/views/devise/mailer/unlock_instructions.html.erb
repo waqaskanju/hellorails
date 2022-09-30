@@ -1,0 +1,5 @@
+<%# This view is used in case of many attempts of wrong password. %>
+<p>Hello <%= @resource.email %>!</p>
+<p> Account locked, excess attempt.</p>
+<p>Click the link to unlock your account.:</p>
+<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>

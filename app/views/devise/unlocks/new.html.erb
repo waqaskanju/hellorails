@@ -1,0 +1,23 @@
+
+<%# This view is used to unloack your account. %>
+<h2>Resend unlock instructions</h2>
+
+<%# Form start %>
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+<%# Email field. %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+<%# Button field. %>
+  <div class="actions">
+    <%= f.submit "Resend unlock instructions" %>
+  </div>
+<% end %>
+
+<%# shared tempalte. %>
+
+<%= render "devise/shared/links" %>

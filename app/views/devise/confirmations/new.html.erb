@@ -1,0 +1,19 @@
+<h2>Send Confirmation again?</h2>
+
+<%# This view is used to send user the email confirmation message. %>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+  </div>
+
+  <div >
+    <%= f.submit "Send" %>
+  </div>
+<% end %>
+
+<%# Render the shared links tempalte. %>
+<%= render "devise/shared/links" %>

@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hellorails</title>
+    <title> Hello Blog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%# to prevent cross site scripting attack %>
     <%= csrf_meta_tags %>
+    <%# CSP is used to allow only trustable scripts in your app %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 
+    <%# Importmap for Rails. Import maps let you import JavaScript 
+    modules using logical names that map to versioned/digested files
+     – directly from the browser. %>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in?%>
+      <%= button_to "Logout", destroy_user_session_path, { method: :delete, data: { turbo:false }} %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

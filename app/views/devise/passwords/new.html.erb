@@ -1,0 +1,26 @@
+
+<%# This page is used incase user forget password. %>
+<main>
+  <section class="log-in shadow">
+    <h2>Forgot your password?</h2>
+
+  <%# Form Start here. %>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+<%# Type Email. %>
+      <div class="string-input">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+<%# Button %>
+      <div class="actions">
+        <%= f.submit "Send Reset Instructions", :class => 'log-in-button send-password' %>
+      </div>
+    <% end %>
+<%# Change tempalte. %>
+    <%= render "devise/shared/links" %>
+  </section>
+</main>
+
